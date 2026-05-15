@@ -1,6 +1,6 @@
 package P1Basic;
 
-public class Variables {
+public class Variable {
     public static void main(String[] args) {
         int MyInt = 577;
         short MyShort = 233;
