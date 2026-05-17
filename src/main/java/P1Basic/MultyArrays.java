@@ -52,5 +52,13 @@ public class MultyArrays {
         }
 
         System.out.println(selarySum);
+
+        System.out.println("next");
+        for (int[] row: deportaments){
+            for(int num: row){
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
     }
 }
