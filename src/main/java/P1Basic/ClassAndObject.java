@@ -82,6 +82,15 @@ class Car {
         this.country = country;
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", year=" + year +
+                ", country='" + country + '\'' +
+                '}';
+    }
+
     public static int get2xspeed(int hpower){
         return hpower * speed;
     }
