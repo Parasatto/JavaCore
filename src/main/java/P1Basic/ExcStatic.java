@@ -18,12 +18,13 @@ public class ExcStatic {
         // 4. Эксперимент: меняем название компании для всех сразу
         Employee.companyName = "New IT Corp";
         System.out.println("\n--- После смены названия компании ---");
-        emp1.printInfo(); // У Ивана тоже изменится название компании
+        emp1.printInfo(); // У Ивана тоже изменится название компанииs
+        System.out.println(Employee.CLASSS_NAME);
     }
 }
 
 class Employee {
-
+    public static final String CLASSS_NAME = "Employee";
     private String name;
     private int salary;
 
