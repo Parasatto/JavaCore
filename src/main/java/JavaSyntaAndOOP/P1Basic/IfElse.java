@@ -1,0 +1,13 @@
+package JavaSyntaAndOOP.P1Basic;
+
+public class IfElse {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++){
+            if (i % 2 == 0) {
+                System.out.println("четный");
+            }else {
+                System.out.println("не четный");
+            }
+        }
+    }
+}
