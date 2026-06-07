@@ -1,4 +1,4 @@
-package JavaCollection;
+package JavaCollection.ArrayList;
 
 import JavaSyntaAndOOP.Serialaizble.GameCharacter;
 
