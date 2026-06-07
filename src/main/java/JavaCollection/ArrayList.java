@@ -1,4 +1,6 @@
-package JavaSyntaAndOOP.Serialaizble;
+package JavaCollection;
+
+import JavaSyntaAndOOP.Serialaizble.GameCharacter;
 
 import java.util.List;
 
