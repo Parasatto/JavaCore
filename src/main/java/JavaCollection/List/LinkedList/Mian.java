@@ -1,4 +1,4 @@
-package JavaCollection.LinkedList;
+package JavaCollection.List.LinkedList;
 
 import JavaSyntaAndOOP.Serialaizble.GameCharacter;
 
