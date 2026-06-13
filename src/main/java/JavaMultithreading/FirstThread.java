@@ -1,6 +1,6 @@
 package JavaMultithreading;
 
-public class Test {
+public class FirstThread {
     public static void main(String[] args) {
         MyThread m1 = new MyThread();
         MyThread m2 = new MyThread();
