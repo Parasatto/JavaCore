@@ -6,7 +6,7 @@ public class MyMath {
         return a + b;
     }
 
-    public static double divide(int a, int b) throws Exception {
+    public static double divide(int a, int b){
         if (a == 0 || b == 0){
             throw new ArithmeticException("Can not be divided by zero");
         }
