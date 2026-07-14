@@ -4,11 +4,23 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.lang.reflect.Method;
 
 public class OldCalculator {
 
     public static void main(String[] args) {
         OldCalculator.sum(1,2);
+
+        Class cl = OldCalculator.class;
+
+        Method[] methods = cl.getDeclaredMethods();
+
+        for (Method m: methods){
+            if (m.isAnnotationPresent(MethodInfo.class)){
+                System.out.println(m.getName());
+                MethodInfo info = m.getAnnotation(MethodInfo.class);
+            }
+        }
     }
 
     @Deprecated
