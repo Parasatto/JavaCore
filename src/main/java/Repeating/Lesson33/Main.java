@@ -12,9 +12,23 @@ public class Main {
         workables.add(new Robot());
         workables.add(new Crane());
 
+
+
         for (WorkAble w : workables){
             w.work();
         }
+
+        WorkAble workAble = new WorkAble() {
+            @Override
+            public void work() {
+                System.out.println("Testing anonim classes");
+            }
+        };
+
+        workAble.work();
+
+
+
 
     }
 }
