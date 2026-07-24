@@ -2,6 +2,7 @@ package StreamAPI;
 
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CreatingStreams {
@@ -18,7 +19,7 @@ public class CreatingStreams {
         Stream<String> s3 = Stream.of("a", "b", "c");
 
         //Empty stream
-        Stream<String> s4= Stream.empty();
+        Stream<String> s4 = Stream.empty();
 
         //Task
         List<Integer> nums = List.of(5, 12, 5, 8, 20, 12, 1, 30);
@@ -35,13 +36,13 @@ public class CreatingStreams {
 
         List<String> names = List.of("Ivan", "Petr", "Anna");
 
-        names.stream().peek(name -> System.out.println("Делаем это имя:"+ name))
-                        .map(String::toUpperCase)
-                        .forEach(System.out::println);
+        names.stream().peek(name -> System.out.println("Делаем это имя:" + name))
+                .map(String::toUpperCase)
+                .forEach(System.out::println);
 
         Order order1 = new Order(List.of("Rice", "Apple", "Pineapple"));
         Order order2 = new Order(List.of("Bread", "Milk", "Apple"));
-        List<Order> orders = List.of(order1,order2);
+        List<Order> orders = List.of(order1, order2);
 
 
         List<String> allProducts = orders
@@ -76,7 +77,7 @@ public class CreatingStreams {
 
         Optional<Double> anyHighNum = prices
                 .stream()
-                .filter( n -> n > 1000.00)
+                .filter(n -> n > 1000.00)
                 .findAny();
 
         System.out.println(anyHighNum);
@@ -86,7 +87,7 @@ public class CreatingStreams {
 
         long count = nums7.stream().count();
 
-        int sum = nums7.stream().reduce(1,(a, b) -> a * b);
+        int sum = nums7.stream().reduce(1, (a, b) -> a * b);
 
         Optional<Integer> min = nums7.stream().min(Integer::compare);
         Optional<Integer> max = nums7.stream().max(Integer::compare);
@@ -97,9 +98,32 @@ public class CreatingStreams {
         System.out.println(max);
 
 
+        List<Employee> workers = List.of(
+                new Employee("Parasat", "DIS", 500_000),
+                new Employee("Parasat", "DIS", 900_000),
+
+                new Employee("Azamat", "DRPI", 400_000),
+                new Employee("Saltanat", "DST", 600_000),
+                new Employee("Bauka", "DRR", 300_000)
+        );
+
+        Map<String, Double> res = workers.stream()
+                .collect(Collectors.groupingBy(
+                        Employee::getDepartment,
+                        Collectors.averagingInt(Employee::getSalary)));
+
+        System.out.println(res);
+
+        List<String> numbers = List.of("18", "25", "30", "42", "15");
+
+        double avgAge = numbers.stream()
+                .mapToInt(Integer::parseInt)
+                .filter(n -> n >= 18)
+                .average()
+                        .orElse(0.0);
 
 
-
+        System.out.println("avg age: " + avgAge);
 
 
     }
