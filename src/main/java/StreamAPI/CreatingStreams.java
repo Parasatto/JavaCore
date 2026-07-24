@@ -81,6 +81,22 @@ public class CreatingStreams {
 
         System.out.println(anyHighNum);
 
+        //Task 7
+        List<Integer> nums7 = List.of(10, 20, 30, 40);
+
+        long count = nums7.stream().count();
+
+        int sum = nums7.stream().reduce(1,(a, b) -> a * b);
+
+        Optional<Integer> min = nums7.stream().min(Integer::compare);
+        Optional<Integer> max = nums7.stream().max(Integer::compare);
+
+        System.out.println(count);
+        System.out.println(sum);
+        System.out.println(min);
+        System.out.println(max);
+
+
 
 
 
