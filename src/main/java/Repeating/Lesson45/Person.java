@@ -6,6 +6,8 @@ public class Person implements Serializable {
     private String name;
     private int age;
 
+    //transient если отметить поле этим то оно не будет записоваться
+
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
